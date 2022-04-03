@@ -1,0 +1,117 @@
+[
+    {
+        "title": "admin",
+        "name": "admin",
+        "type": "MODULE",
+        "children": [
+            {
+                "title": "中央控制台",
+                "path": "/platform",
+                "name": "platform",
+                "type": "MENU",
+                "component": "/platform/index",
+                "icon": "mdi:monitor-dashboard"
+            },
+            {
+                "title": "系统设置",
+                "name": "system",
+                "type": "MENU",
+                "path": "/system",
+                "icon": "ri:settings-5-line",
+                "children": [
+                    {
+                        "title": "用户管理",
+                        "name": "user",
+                        "type": "MENU",
+                        "path": "user",
+                        "component": "/system/user"
+                    },
+                    {
+                        "title": "角色管理",
+                        "name": "role",
+                        "type": "MENU",
+                        "path": "role",
+                        "component": "/system/role"
+                    },
+                    {
+                        "title": "资源管理",
+                        "name": "resource",
+                        "type": "MENU",
+                        "path": "resource",
+                        "component": "/system/resource"
+                    }
+                ]
+            },
+            {
+                "title": "实用功能",
+                "name": "function",
+                "type": "MENU",
+                "path": "/function",
+                "icon": "ri:settings-5-line",
+                "children": [
+                    {
+                        "title": "主题切换",
+                        "name": "theme",
+                        "type": "MENU",
+                        "path": "theme",
+                        "component": "/function/theme"
+                    },
+                    {
+                        "title": "权限控制",
+                        "name": "permission",
+                        "type": "MENU",
+                        "path": "permission",
+                        "component": "/function/permission",
+                        "children": [
+                            { "title": "新增", "name": "create", "type": "BUTTON" },
+                            { "title": "修改", "name": "edit", "type": "BUTTON" },
+                            { "title": "删除", "name": "delete", "type": "BUTTON" }
+                        ]
+                    },
+                    {
+                        "title": "录屏功能",
+                        "name": "screenrecorder",
+                        "type": "MENU",
+                        "path": "screenrecorder",
+                        "component": "/function/screenrecorder"
+                    },
+                    {
+                        "title": "web worker",
+                        "name": "woker",
+                        "type": "MENU",
+                        "path": "woker",
+                        "component": "/function/woker"
+                    },
+                    {
+                        "title": "markdown",
+                        "name": "markdown",
+                        "type": "MENU",
+                        "path": "markdown",
+                        "component": "/function/markdown"
+                    },
+                    {
+                        "title": "github commits",
+                        "name": "github",
+                        "type": "MENU",
+                        "path": "github",
+                        "component": "/function/github"
+                    },
+                    {
+                        "title": "vite plugins",
+                        "name": "vitePlugins",
+                        "type": "MENU",
+                        "path": "vitePlugins",
+                        "component": "/function/vitePlugins"
+                    },
+                    {
+                        "title": "vueuse",
+                        "name": "vueuse",
+                        "type": "MENU",
+                        "path": "vueuse",
+                        "component": "/function/vueuse"
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -1,0 +1,131 @@
+@import (reference) '../../styles/index.less';
+
+@menu-fullfilled-width: 220px;
+@menu-collapsed-width: 80px;
+@menu-dark-bg: #001529;
+
+.levi-layout {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f0f2f5;
+    .levi-sider {
+        position: relative;
+        float: left;
+        height: 100%;
+        width: @menu-fullfilled-width;
+        background-color: @menu-dark-bg;
+        // background-image: url(../assets/images/sidebar.png);
+        background-size: 100% 100%;
+        .logo {
+            display: flex;
+            height: 52px;
+            align-items: center;
+            justify-content: center;
+            background-color: @menu-dark-bg;
+            color: #fff;
+            h1 {
+                color: #fff;
+                font-size: 18px;
+                margin: 0 10px;
+                font-weight: 600;
+            }
+            img {
+                max-height: 80%;
+                object-fit: contain;
+            }
+        }
+        .menu {
+            height: calc(100% - 52px);
+            overflow: auto;
+            .ant-menu-item {
+                margin-top: 0;
+            }
+        }
+        // 塌陷的样式
+        &.isCollapse {
+            width: @menu-collapsed-width;
+            .logo h1 {
+                display: none;
+            }
+            &+.levi-main {
+                margin-left: @menu-collapsed-width;
+            }
+        }
+    }
+
+    .levi-main {
+        margin-left: @menu-fullfilled-width;
+        overflow-x: auto;
+        .levi-header {
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 0 5px 1px rgba(100, 166, 204, 0.3);
+        }
+        .levi-navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 52px;
+            line-height: 52px;
+            background-color: @menu-dark-bg;
+            color: #fff;
+            &__content {
+                flex: 1;
+            }
+            &__action {
+                display: flex;
+                align-items: center;
+                padding-right: 10px;
+                .settings-icon {
+                    cursor: pointer;
+                    margin-left: 10px;
+                }
+            }
+            &__left {
+                display: flex;
+                align-items: center;
+                .collapse-icon {
+                    display: flex;
+                    padding: 0 14px;
+                    cursor: pointer;
+                    transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+                    margin-right: 6px;
+                    svg {
+                        font-size: 18px;
+                        height: 52px;
+                    }
+                    &:hover {
+                        background-color:#102948;
+                    }
+                }
+            }
+        }
+        .levi-content {
+            height: calc(100vh - 52px - 40px);
+            padding: 10px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            & > * {
+                min-height: 100%;
+            }
+        }
+    }
+}
+
+
+.levi-layout.isFullscreen {
+    background-color: #fff;
+    .levi-sider {
+        display: none;
+    }
+    .levi-main {
+        margin-left: 0;
+        .levi-header {
+            display: none;
+        }
+        .levi-content {
+            padding: 0;
+            height: 100%;
+        }
+    }
+}
